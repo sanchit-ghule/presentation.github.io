@@ -1,0 +1,4 @@
+Overview Of Text To Speech
+Text to speech systems automatically convert text to synthesised speech. Let us say we have a text document. If the document is given as an input to a text to speech system, the output will be a spoken version of the input document. Text to speech systems have a voice and the grammar for a language. They generate speech based on the input text, the voice and the language. There are 2 types of text to speech synthesis.
+first is Limited domain synthesis.
+and other is Full synthesis.

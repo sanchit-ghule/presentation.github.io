@@ -1,0 +1,5 @@
+logic using C Sharp
+I used most of the Microsoft's ".net" Framework libraries and Cannot reveal the source code due to Microsoft's copyright terms and conditions.
+Here is a small chunk of the source code.
+Complete source code is million dollar code.
+After debugging and compiling 1103 lines of code, created an executable file which I call say.exe.

@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Project-AudioBook</title>
+
+		<meta name="description" content="we convert your text documents into high quality audio books.">
+		<meta name="author" content="Sanchit J. Ghule">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<a href="https://www.project-audiobook.tech/">
+						<img src="https://github.com/evangelistalab/hugo-academic/blob/master/academic.png" alt="AudioBook logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
+					</a>
+					<h1><span class="underline"><b>An Audio-Book Project</b></span></h1>
+					<p>
+						<small>Created by <a href="https://sanchit-ghule.github.io/">Sanchit Ghule</a></small>
+					<b>Roll No</b>: MM16B004 
+					<b>Guide</b>: <a href="https://mme.iitm.ac.in/?p=378">Dr. G. Phanikumar</a>
+					<b>Project URL</b>: <a href="https://www.project-audiobook.tech/">https://www.project-audiobook.tech/</a>
+
+					</p>
+				</section>
+
+				<section data-background-video="audio/introduction.mp3,video.webm">
+					<h2>Introduction</h2>
+					<p>
+						As a contemporary system to provide equal education rights to all learners, assistive tools and accessible documents gives different opportunities  for people who cannot get enough educational services because of their limitations or disabilities.
+						The traditional way to convert available books into audio-books requires a human intervention, which again requires strenuous efforts to produce a high quality audiobooks. Also, the production and publication processes is very difficult in these scenarios.
+						This study conducted to  develop a tools to produce  high quality  audio-books for the blind and visually impaired.
+					</p>
+
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section data-background-video="audio/what_is_audiobook.mp3,video.webm">
+						<h2><b>What is audiobook</b>?</h2>
+						<p>According to Wikipedia: <br /></p>
+						<blockquote>
+						<p>
+						An audiobook (or a talking book) is a recording of a book or other work being read out loud. ---<a href="https://en.wikipedia.org/wiki/Audiobook">wikipedia.org</a>
+						</p>
+						</blockquote>
+					</section>
+					<section data-background-video="audio/tts.mp3,video.webm">
+						<h2><b>What is speech synthesiser</b>?</h2>
+						<p>Speech synthesis is the artificial production of human speech. A computer used for speech synthesis is called a speech synthesizer.</p>
+						<p>the functionality of a computer software to convert a text into speech, synthesise it and speak it is called TTS. </p>
+					</section>
+				</section>
+
+				<section>
+					<section data-background-video="audio/overview.mp3,video.webm">
+					<h2>Overview Of Text To Speech</h2>
+					<p>
+						<b>Text Document</b>
+					</p>
+
+							<img class="r-frame" style="background: rgba(255,255,255,0.1);" width="178" height="238" data-src="https://static.slid.es/reveal/arrow.png" alt="Down arrow">
+
+					<p>
+						<b>Spoken Version</b>
+					</p>
+					<ul class="org-ul">
+					<li>Limited domain synthesis.</li>
+					<li>Full synthesis.</li>
+					</ul>
+					</section>
+					<section data-background-video="audio/limited.mp3,video.webm">
+					<h3 id="org849c02e"><span class="section-number-1">1</span> Limited Domain Speech Synthesis</h3>
+						<p>
+						This speech synthesis technique used in situations where the text to be spoken is of a limited domain. 
+							e.g. IVR systems, talking clocks and ATMs(Automatic Teller Machines), automated announcements, etc. 
+						</p>
+					<h3 id="org654a799"><span class="section-number-2">2</span> Full synthesis</h3>
+						<p>
+						This is a more generic technique of synthesising speech. Voices generated intended for this purpose use a significantly large amount of text recordings to build the voice. These voices are capable of synthesising any text of perticular  language. 
+							e.g. screen readers, TTS systems
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section data-background-video="audio/problemstatement.mp3,video.webm">
+					<h2>Problem Statement</h2>
+						<p>
+						Despite advancements in screen reading and text to speech technology, a significant amount of text is inaccessible to the users. Reading printed text is still a major challenge for visually impaired users.<br />
+						In this first part of the work,  our goal is to  build a tool which could utilise <b>all current synthesiser technology</b>, which could process <b>all documents</b>, and  produce <b>high quality multilingual</b> "mp3" audiobooks. <br />
+							The Build tool could be able to process unlimited pages of PDF documents.
+						</p>
+					<h2>selection of programming language</h2>
+						<ul class="org-ul">
+						<li>Python</li>
+						<li>C#</li>
+						</ul>
+					</section>
+
+					<section data-background-video="audio/pythonlogic.mp3,video.webm" data-auto-animate>
+					<h2 data-id="code-title">Python Code</h2>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+						import pyttsx3
+						import PyPDF2
+
+						book = open('sanchit-ghule-personal-resume.pdf', 'rb')
+						pdfReader = PyPDF2.PdfFileReader(book)
+						pages = pdfReader.numPages
+
+						speaker = pyttsx3.init()
+						for num in range(0, pages):
+						    page = pdfReader.getPage(num)						
+						    text = page.extractText()
+						    speaker.say(text)
+						    speaker.runAndWait()
+					</code></pre>
+					</section>
+					<section data-background-video="audio/shortcomings.mp3,video.webm">
+					<h3>Shortcomings with Python</h3>
+					<ol class="org-ol">
+						<li>Code is not efficient with large number of files.</li>
+						<li>It is taking longer to process text extraction and audio conversion.</li>
+						<li>Limited number of synthesisers are available in Python.</li>
+						<li>difficult to  use in multithreading. Module doesn’t quite behave the way expected.</li>
+					</ol>
+					<p>
+					Need to look for alternate options.
+					</p>
+					</section>
+				</section>
+
+				<section data-background-video="audio/csharp.mp3,video.webm">
+					<h2 class="r-fit-text">C Sharp</h2>
+				</section>
+
+				<section>
+					<section data-background-video="audio/csharplogic.mp3,video.webm">
+					<h3 data-id="code-title">C Sharp Source Code</h3>
+					<pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Globalization;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Security.Permissions;
+using System.Text;
+using System.Text.RegularExpressions;
+#if LINQ
+using System.Linq;
+#endif
+#if TEST
+using NDesk.Options;
+#endif
+					</code></pre>
+					</section>
+					<section data-background-video="audio/advantages.mp3,video.webm">
+					<h2>Advantages of using C# Tool</h2>
+						<ol class="org-ol">
+<li>It is very efficient.</li>
+						<li>executable can run on <b>Powershell</b> as well as <b>WSL2</b>.</li>
+						<li>Can process several thousands of books.</li>
+						<li>Can process all worlds languages. It will only require supporting synthesiser language.</li>
+						<li>Option to varying speech rate, volume of processing audio, ability to change  synthesiser support and synthesiser language.</li>
+						<li>It can produce "mp3" audiofile as output.</li>
+						<li>Script can run 24/7, 365 days without overloading.</li>
+						</ol>
+					</section>
+				</section>
+
+				<section data-background-video="audio/synthesizers.mp3,video.webm" data-background="#dddddd">
+					<h2>Synthesiser used</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Sr No</th>
+<th scope="col" class="org-left">Synthesizer Name</th>
+<th scope="col" class="org-left">audio file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1.</td>
+<td class="org-left">Google female voice</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/google.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">2.</td>
+<td class="org-left">Microsoft cortana</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/cortana.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">3.</td>
+<td class="org-left">Eloquence</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Eloquence.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">4.</td>
+<td class="org-left">IVONA 2  voices:</td>
+<td class="org-left">&#x2026;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Brian</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Brian.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Kimberly</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Kimberly.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Kendra</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Kendra.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Ivy</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Ivy.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Eric</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Eric.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Emma</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Emma.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Jennifer</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Jennifer.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Salli</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Salli.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">5.</td>
+<td class="org-left">VW voices:</td>
+<td class="org-left">&#x2026;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Julie</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Julie.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Kate</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Kate.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Paul</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Paul.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">6.</td>
+<td class="org-left">ScanSoft  voices:</td>
+<td class="org-left">&#x2026;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Nathan (American)</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Nathan.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Samantha (American)</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Samantha.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Tom (American)</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Tom.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Daniel (British)</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Daniel.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Serena (British)</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Serena.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Stephanie (British)</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Stephanie.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Karen (Australian)</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Karen.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Lee (Australian)</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Lee.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">sangita (Indian)</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/sangita.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Hindi-Lekha</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Lekha-hindi.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Kannada-Alpana</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Kannada-Alpana.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Marathi-Ananya</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Ananya-marathi.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Tamil-Vani</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Tamil-Vani.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Telugu-Geeta</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/telegu_geeta.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">7.</td>
+<td class="org-left">Microsoft Windows voices:</td>
+<td class="org-left">&#x2026;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Microsoft David</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/David.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Microsoft Zira</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Zira.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">8.</td>
+<td class="org-left">Hear2Read voices</td>
+<td class="org-left">&#x2026;</td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Hear2Read-english</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Hear2Read-english.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Hear2Read-hindi</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Hear2Read-hindi.mp3">audiofile</a></td>
+</tr>
+
+<tr>
+<td class="org-right">&#xa0;</td>
+<td class="org-left">Hear2Read-marathi</td>
+<td class="org-left"><a href="https://www.project-audiobook.tech/voice/Hear2Read-marathi.mp3">audiofile</a></td>
+</tr>
+</tbody>
+</table>
+				</section>
+
+
+				<section data-background-video="audio/conclusions.mp3,video.webm">
+					<h2>Conclusions and Future work</h2>
+						<ul class="org-ul">
+						<li>Current day TTS systems and screen reader implementations are not capable of efficiently speaking mathematical content.</li>
+						<li>Mathematical equations comprise of different types of visual cues to convey their semantic meaning. Some of these visual cues are special symbols, superscripts, subscripts, parentheses,etc.</li>
+						<li>Despite advances in screen reading and text to speech technologies, the problem of speaking complex math remains majorly unresolved.</li>
+						<li>Having developed the Tool for producing audiobooks and defined the problem, in future we will attempt to improve the accessibility of mathematical content.</li>
+						<li>We will develop automated server backend for our tool.</li>
+						</ul>
+				</section>
+
+				<section data-background-video="audio/results.mp3,video.webm" data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4" data-background-color="#000000">
+						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+							<h2>AudioBook-Project Results</h2>
+							<pre><code class="hljs html" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+						</div>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/search/search.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+
+			// Also available as an ES module, see:
+			// https://revealjs.com/initialization/
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+			});
+
+		</script>
+
+	</body>
+</html>

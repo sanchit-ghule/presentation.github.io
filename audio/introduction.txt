@@ -1,0 +1,5 @@
+Introduction:
+As a contemporary system to provide equal education rights to all learners, assistive tools and accessible documents gives different opportunities for people who cannot get enough educational services because of their limitations or disabilities. 
+The traditional way to convert available books into audio-books requires a human intervention, which again requires strenuous efforts to produce a high quality audiobooks. 
+Also, the production and publication processes is very difficult in these scenarios. 
+This study conducted to develop a tools to produce high quality audio-books for the blind and visually impaired.

@@ -1,0 +1,7 @@
+Conclusions and Future work
+• Current day TTS systems and screen reader implementations are not capable of efficiently speaking mathematical content.
+• Mathematical equations comprise of different types of visual cues to convey their semantic meaning. Some of these visual cues are special symbols, superscripts, subscripts, parentheses,etc.
+• Despite advances in screen reading and text to speech technologies, the problem of speaking complex math remains majorly unresolved.
+• Having developed the Tool for producing audiobooks and defined the problem, 
+in future we will attempt to improve the accessibility of mathematical content.
+• We will develop automated server backend for our tool.

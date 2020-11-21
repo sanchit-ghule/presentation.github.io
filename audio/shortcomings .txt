@@ -1,0 +1,6 @@
+Shortcomings with Python
+1. Code is not efficient with large number of files.
+2. It is taking longer to process text extraction and audio conversion.
+3. Limited number of synthesisers are available in Python.
+4. difficult to use in multithreading. Module doesn’t quite behave the way expected.
+Need to look for alternate options.

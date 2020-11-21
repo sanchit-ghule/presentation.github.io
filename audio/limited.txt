@@ -1,0 +1,6 @@
+1. Limited Domain Speech Synthesis
+This speech synthesis technique used in situations where the text to be spoken is of a limited domain. (i.e. fixed set of words). One might have listened limited domain synthesized speech in IVR systems, talking clocks and ATMS (Automatic Teller Machines), automated announcements, etc.
+This technique is said to produce a high quality speech output . it is due to the limited data that has to be processed for the synthesis.
+2. Full synthesis
+This is a more generic technique of synthesising speech. Voices generated for this purpose use a significantly large amount of text recordings to build the model. These voices are capable of synthesising  any text of perticular language. i.e. they can speak out any text of perticular language. unlike, the voices generated for the purpose of limited domain synthesis. Voices used in screen readers are generated using this approach. But TTS systems and screen readers have a good number of limitations. For instance, they are incapable of speaking math content graphical content and animated content.
+In subsequent semester, we'll work on major limitation of TTS systems, The incapability of effectively speaking mathematical content.

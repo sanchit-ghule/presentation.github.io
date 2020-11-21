@@ -1,0 +1,8 @@
+Advantages of using C Sharp
+1. It is very efficient.
+2. executable can run on Powershell as well as WSL2.
+3. Can process several thousands of books.
+4. Can process all worlds languages. It will only require supporting synthesiser language.
+5. Option to varying speech rate, volume of processing audio, ability to change synthesiser support and synthesiser language.
+6. It can produce "mp3" audiofile as output.
+7. Script can run 24/7, 365 days without overloading.

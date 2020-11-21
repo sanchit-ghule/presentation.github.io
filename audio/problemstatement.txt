@@ -1,0 +1,8 @@
+Problem Statement
+Despite advancements in screen reading and text to speech technology, a significant amount of text is inaccessible to the users. Reading printed text is still a major challenge for visually impaired users.
+In this first part of the work, our goal is to build a tool which could utilise all current synthesiser technology, which could process all documents, and produce high quality multilingual "mp3" audiobooks.
+The Build tool could be able to process unlimited pages of PDF documents.
+
+selection of programming language
+We have developed our tool both in Python and C sharp programming language.
+so let's see which is best for our use.

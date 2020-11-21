@@ -1,0 +1,4 @@
+Here is the list of synthesizer voices.
+We have used most of the open source and commercial synthesiser engines with our tool to produce high quality audiofiles. 
+These audio files can be produced with varying speech accent and style.
+Currently we are in the process of adapting all the Indian languages.

@@ -1,0 +1,7 @@
+What is speech synthesizer?
+Computers have evolved to a great extent in terms of their capabilities. One such interesting capability is the ability to synthesise speech. 
+Speech synthesis is the artificial production of human speech. A computer used for speech synthesis is called a speech synthesizer. 
+Speech synthesizers can be implemented both in hardware and software. 
+Human Computer Interaction through speech is growing rapidly. A good variety of interesting applications are screen readers, virtual assistants and IVR(Interactive Voice Response). 
+To put it simple, the functionality of a computer software to convert a text into speech, synthesise it and speak it is called TTS. In addition to simplifying human computer interactions, TTS has opened up numerous possibilities for the print disabled. 
+The key benefit TTS holds is that it gives the print disabled people a way to access information and engage in the digital world. Spoken alarms, airport or railway announcements are a few examples where one may have listened to synthesised speech. Interactive voice response systems for customer care is a very common example of a situation where a person interacts with a text to speech system.
